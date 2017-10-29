@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Honors Concierge</title>
+  <!-- <link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet"> -->
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./home.css">
+  <!-- <link rel="stylesheet" href="./honorsProgram.css"> -->
+</head>
+
+<body>
+                                      <!-- HEADER -->
+
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper" id="nav">
+        <a href="#" class="brand-logo"><img src="http://identity.ufl.edu/wp-content/uploads/2015/10/uf.png" alt="Brand Center"></a>
+        <h1>Honors Concierge</h1>
+        <ul id="nav-mobile" class="right hide-on-med-and-down flow-text">
+          <!-- <div class="search-wrapper">
+            <li class="search"><input id="search" placeholder="search"></li>
+          </div> -->
+          <li><a href="#">Honors Program</a></li>
+          <li><a href="#">Registration</a></li>
+          <li><a href="#">Degree Planning</a></li>
+          <li><a href="#">Involvement</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+                                    <!-- HOME PLATE -->
+
+  <div class="section">
+    <h1 id="question"><b>What can we help you with today?</b></h1>
+
+    <div class="search-input">
+      <input type="text" name="search" placeholder="Search..." onfocus="deleteSearch(this)" onfocusout="addSearch(this)">
+    </div>
+                                      <!-- CARDS -->
+    <div class="row flow-text">
+
+                                <!-- HONORS PROGRAM CARD -->
+      <div class="col s12 m6 l3">
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <input type="image" src="assets/honors_alt.png" style="width: 100%;"/>
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">Honors Program<i class="material-icons right">more_vert</i></span>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Honors Program<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            <a class="waves-effect orange accent-4 btn-large">View</a>
+          </div>
+        </div>
+      </div>
+
+
+                                <!-- REGISTRATION CARD -->
+      <div class="col s12 m6 l3">
+        <div class="card" id="card2">
+          <div class="card-image waves-effect waves-block waves-light">
+            <input type="image" src="assets/register_alt.png" style="width: 100%;"/>
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">Registration<i class="material-icons right">more_vert</i></span>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Registration<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            <a class="waves-effect orange accent-4 btn-large">View</a>
+          </div>
+        </div>
+      </div>
+
+
+                              <!-- DEGREE PLANNING CARD -->
+      <div class="col s12 m6 l3">
+        <div class="card" id="card3">
+          <div class="card-image waves-effect waves-block waves-light">
+            <input type="image" src="assets/planning_alt.png" style="width: 100%;"/>
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">Degree Planning<i class="material-icons right">more_vert</i></span>
+          </div>
+          <div class="card-reveal container">
+            <span class="card-title grey-text text-darken-4">Degree Planning<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            <a class="waves-effect orange accent-4 btn-large">View</a>
+          </div>
+        </div>
+      </div>
+
+
+                              <!-- INVOLVEMENT CARD -->
+      <div class="col s12 m6 l3">
+        <div class="card" id="card4">
+          <div class="card-image waves-effect waves-block waves-light">
+            <input type="image" src="assets/involvement_alt.png" style="width: 100%;"/>
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">Involvement<i class="material-icons right">more_vert</i></span>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Involvement<i class="material-icons right">close</i></span>
+            <p style="font-weight: 100;">Here is some more information about this product that is only revealed once clicked on.</p>
+            <a class="waves-effect orange accent-4 btn-large">View</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="scroll"></div> -->
+
+  <!-- including jQuery CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <footer>
+  </footer>
+</body>
+
+</html>
