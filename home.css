@@ -92,7 +92,7 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 600px;
+  height: 800px;
   background: white;
   background-image: url('https://static.pexels.com/photos/268407/pexels-photo-268407.jpeg');
   background-repeat: no-repeat;
