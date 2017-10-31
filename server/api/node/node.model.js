@@ -8,10 +8,7 @@ var NodeSchema = new mongoose.Schema({
   description: String, // text to be displayed in headings and breadcrumbs
   content: String, // text to be displayed when on this node
   children: [mongoose.Schema.ObjectId],
-  ancestors: [{
-    name: String,
-    id: mongoose.Schema.ObjectId
-  }]
+  ancestors: [Object] // objects should contain the name of the ancestor and the ancestor's id
 });
 
 registerEvents(NodeSchema);
