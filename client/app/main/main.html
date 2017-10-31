@@ -1,28 +1,83 @@
-<header class="hero-unit" id="banner">
-  <div class="container">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">Kick-start your next web app with Angular Fullstack</p>
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
-  </div>
-</header>
+                                  <!-- HOME PLATE -->
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Features:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in $ctrl.awesomeThings">
-        <li><a href="#" uib-tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="$ctrl.deleteThing(thing)">&times;</button></a></li>
-      </ul>
+<div class="section">
+  <h1 id="question"><b>What can we help you with today?</b></h1>
+
+  <div class="search-input">
+    <input type="text" name="search" placeholder="Search..." onfocus="deleteSearch(this)" onfocusout="addSearch(this)">
+  </div>
+                                    <!-- CARDS -->
+  <div class="row flow-text">
+
+                              <!-- HONORS PROGRAM CARD -->
+    <div class="col s12 m6 l3">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <input type="image" src="assets/assets/honors_alt.png" style="width: 100%;"/>
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">Honors Program<i class="material-icons right">more_vert</i></span>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Honors Program<i class="material-icons right">close</i></span>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          <a class="waves-effect orange accent-4 btn-large">View</a>
+        </div>
+      </div>
+    </div>
+
+
+                              <!-- REGISTRATION CARD -->
+    <div class="col s12 m6 l3">
+      <div class="card" id="card2">
+        <div class="card-image waves-effect waves-block waves-light">
+          <input type="image" src="assets/assets/register_alt.png" style="width: 100%;"/>
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">Registration<i class="material-icons right">more_vert</i></span>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Registration<i class="material-icons right">close</i></span>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          <a class="waves-effect orange accent-4 btn-large">View</a>
+        </div>
+      </div>
+    </div>
+
+
+                            <!-- DEGREE PLANNING CARD -->
+    <div class="col s12 m6 l3">
+      <div class="card" id="card3">
+        <div class="card-image waves-effect waves-block waves-light">
+          <input type="image" src="assets/assets/planning_alt.png" style="width: 100%;"/>
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">Degree Planning<i class="material-icons right">more_vert</i></span>
+        </div>
+        <div class="card-reveal container">
+          <span class="card-title grey-text text-darken-4">Degree Planning<i class="material-icons right">close</i></span>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          <a class="waves-effect orange accent-4 btn-large">View</a>
+        </div>
+      </div>
+    </div>
+
+
+                            <!-- INVOLVEMENT CARD -->
+    <div class="col s12 m6 l3">
+      <div class="card" id="card4">
+        <div class="card-image waves-effect waves-block waves-light">
+          <input type="image" src="assets/assets/involvement_alt.png" style="width: 100%;"/>
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">Involvement<i class="material-icons right">more_vert</i></span>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Involvement<i class="material-icons right">close</i></span>
+          <p style="font-weight: 100;">Here is some more information about this product that is only revealed once clicked on.</p>
+          <a class="waves-effect orange accent-4 btn-large">View</a>
+        </div>
+      </div>
     </div>
   </div>
-
-  <form class="thing-form">
-    <label>Syncs in realtime across clients</label>
-    <p class="input-group">
-      <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="$ctrl.newThing">
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="$ctrl.addThing()">Add New</button>
-      </span>
-    </p>
-  </form>
 </div>

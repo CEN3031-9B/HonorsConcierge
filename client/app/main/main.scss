@@ -1,27 +1,138 @@
-.thing-form {
-  margin: 20px 0;
+html, body {
+  background-color: #fff;
+  font-family: "Roboto";
+  height: 100%;
+  width: 100%;
 }
 
-#banner {
-  border-bottom: none;
-  margin-top: -20px;
+.navbar-fixed {
+  height: 100px;
+  overflow: hidden;
 }
 
-#banner h1 {
-  font-size: 60px;
-  line-height: 1;
-  letter-spacing: -1px;
+.navbar-fixed img {
+  height: 100px;
+  vertical-align: middle;
 }
 
-.hero-unit {
+.navbar-fixed nav {
+  position: fixed;
+  height: 100px;
+  background-color: #084b81;
+  border-bottom: 8px solid #db662c;
+}
+
+.nav-wrapper h1 {
+  position: absolute;
+  padding-left: 100px;
+  line-height: 75%;
+  font-size: 3.5vw;
+}
+
+#nav-mobile a {
+  height: inherit;
+  line-height: 5;
+  font-size: .8em;
+}
+
+nav li {
+  height: 100px;
+}
+
+.search input {
+  width: 200px;
+  margin: 0 auto;
+  color: white;
+}
+
+.search-input {
   position: relative;
-  padding: 30px 15px;
-  color: #F5F5F5;
-  text-align: center;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-  background: #4393B9;
+  margin: 0 auto;
+  width: 50%;
+  padding: 10px 0;
 }
 
-.navbar-text {
-  margin-left: 15px;
+/*
+  - the way we access the input here is necessary to override Materialize.css
+  - use Settings/Inspect on your browser to check how the input is called
+*/
+input[type=text]:not(.browser-default) {
+  font-family: 'Roboto';
+  font-size: 1.4em;
+  font-weight: 200;
+  letter-spacing: 1px;
+  background-color: white;
+  border-bottom: none;
+  display: block;
+  margin: 0 auto;
+  width: 45%;
+  border-radius: 10px;
+  outline: none;
+  text-align: center;
+  padding-left: 2%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-fill-mode: forwards;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]) {
+  width: 100%;
+  border-bottom: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#question {
+  text-align: center;
+  font-family: "Roboto";
+  color: white;
+  font-size: 3.5vw;
+  white-space: nowrap;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.section {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  position: absolute;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 85%;
+  background: white;
+  background-image: url('https://static.pexels.com/photos/268407/pexels-photo-268407.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  letter-spacing: 1px;
+}
+
+.row {
+  padding-top: 3%;
+}
+
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    transform: none;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition: transform 300ms ease-in-out;
+}
+
+.card-title {
+  white-space: nowrap;
 }

@@ -29,6 +29,21 @@ html, body {
   font-size: 3.5vw;
 }
 
+/*#nav-mobile {
+  opacity: 0;
+  transition: 0.25s;
+}
+
+#nav-mobile.clicked {
+  opacity: 1;
+}*/
+
+#nav-mobile a {
+  height: inherit;
+  line-height: 5;
+  font-size: .8em;
+}
+
 nav li {
   height: 100px;
 }
@@ -131,24 +146,7 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
   white-space: nowrap;
 }
 
-.card:active {
-  animation: fadeOutDown;
-  animation-duration: 1s;
-  transition-timing-function: ease-in;
-  animation-fill-mode: both;
-}
-
-#card1 {animation-delay: 0.20s;}
-#card2 {animation-delay: 0.40s;}
-#card3 {animation-delay: 0.60s;}
-#card4 {animation-delay: 0.80s;}
-
-#nav-mobile a {
-  height: inherit;
-  line-height: 6.5;
-}
-
-footer{
+footer {
   position: fixed;
   width: 100%;
   bottom: 0;
