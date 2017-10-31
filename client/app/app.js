@@ -30,7 +30,7 @@ import './app.scss';
 
 angular.module('honorsConciergeApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io',
   uiRouter, _Auth, account, admin, 'validation.match', navbar, footer, main, constants, socket,
-  util, 
+  util
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {
