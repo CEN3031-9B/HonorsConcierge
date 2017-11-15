@@ -28,9 +28,11 @@ import socket from '../components/socket/socket.service';
 
 import './app.scss';
 
+import TreeComponent from './tree/tree.component';
+
 angular.module('honorsConciergeApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io',
   uiRouter, _Auth, account, admin, 'validation.match', navbar, footer, main, constants, socket,
-  util
+  util, TreeComponent
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {
