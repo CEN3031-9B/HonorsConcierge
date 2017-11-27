@@ -1,0 +1,2 @@
+If these files are edited or tweaked in illustrator and you need to save them to .png make sure to click File->Save Safe for Web.
+There are some rasterization+blending effectsthat might not look right if not saved in this manner. 
