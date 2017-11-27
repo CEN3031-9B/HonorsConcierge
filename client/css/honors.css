@@ -1,0 +1,145 @@
+html, body {
+  background-color: #fff;
+  font-family: "Roboto";
+  height: 100%;
+  width: 100%;
+}
+
+.navbar-fixed {
+  height: 100px;
+  overflow: hidden;
+}
+
+.navbar-fixed img {
+  height: 100px;
+  vertical-align: middle;
+}
+
+.navbar-fixed nav {
+  position: fixed;
+  height: 100px;
+  background-color: #084b81;
+  border-bottom: 8px solid #db662c;
+}
+
+.nav-wrapper h1 {
+  position: absolute;
+  padding-left: 100px;
+  line-height: 75%;
+  font-size: 3.5vw;
+}
+
+/*#nav-mobile {
+  opacity: 0;
+  transition: 0.25s;
+}
+
+#nav-mobile.clicked {
+  opacity: 1;
+}*/
+
+#nav-mobile a {
+  height: inherit;
+  line-height: 5;
+  font-size: .8em;
+}
+
+nav li {
+  height: 100px;
+}
+
+.collection {
+  border-radius: 8px;
+  margin: 0 0;
+}
+
+.collection a.collection-item {
+  color: orange;
+}
+
+.collection .collection-item {
+  height: 50px;
+  padding: 25px 20px;
+  text-align: center;
+  font-size: 1.5vw;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 5px;
+  text-decoration: none;
+  color: orange;
+}
+
+.placeholder {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://static.pexels.com/photos/268407/pexels-photo-268407.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  transition: 0.25s;
+
+  text-align: center;
+  font-family: "Roboto";
+  color: white;
+  font-size: 3.5vw;
+  white-space: nowrap;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.placeholder.clicked {
+  opacity: 0;
+}
+
+.jumbotron-earlyRegistration {
+  position: absolute;
+  opacity: 0;
+  transition: 0.25s;
+}
+
+.jumbotron-earlyRegistration.clicked {
+  opacity: 1;
+}
+
+.jumbotron-honorsAdvising {
+  position: absolute;
+  opacity: 0;
+  transition: 0.25s;
+}
+
+.jumbotron-honorsAdvising.clicked {
+  opacity: 1;
+}
+
+.jumbotron-honorsReq {
+  position: absolute;
+  opacity: 0;
+  transition: 0.25s;
+}
+
+.jumbotron-honorsReq.clicked {
+  opacity: 1;
+}
+
+.jumbotron-coursesCredits {
+  position: absolute;
+  opacity: 0;
+  transition: 0.25s;
+}
+
+.jumbotron-coursesCredits.clicked {
+  opacity: 1;
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 60px;
+  background: #084b81;
+  border-top: 4px solid #db662c;
+  z-index: 10;
+}

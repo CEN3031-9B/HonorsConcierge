@@ -1,0 +1,60 @@
+html, body {
+  background-color: #fff;
+  font-family: "Roboto";
+  height: 100%;
+  width: 100%;
+}
+
+.navbar-fixed {
+  height: 100px;
+  overflow: hidden;
+}
+
+.navbar-fixed img {
+  height: 100px;
+  vertical-align: middle;
+}
+
+.navbar-fixed nav {
+  position: fixed;
+  height: 100px;
+  background-color: #084b81;
+  border-bottom: 8px solid #db662c;
+}
+
+.nav-wrapper h1 {
+  position: absolute;
+  padding-left: 100px;
+  line-height: 75%;
+  font-size: 3.5vw;
+}
+
+/*#nav-mobile {
+  opacity: 0;
+  transition: 0.25s;
+}
+
+#nav-mobile.clicked {
+  opacity: 1;
+}*/
+
+#nav-mobile a {
+  height: inherit;
+  line-height: 5;
+  font-size: .8em;
+}
+
+nav li {
+  height: 100px;
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 60px;
+  background: #084b81;
+  border-top: 4px solid #db662c;
+  z-index: 10;
+}
