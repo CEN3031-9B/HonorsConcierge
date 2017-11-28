@@ -1,0 +1,20 @@
+<div>This is the tree view.</div>
+<input type="text" ng-model="nodeTitle">
+<input type="text" ng-model="nodeDesc">
+<input type="text" ng-model="nodeContent">
+<input type="text" ng-model="nodeAncestorTitle">
+<button ng-click="treeCtrl.addNode()">Submit</button>
+<div ng-model="treeCtrl.message"></div>
+
+<div>Tree info</div>
+<div>Title: {{currTitle}}</div>
+<div>Description: {{currDesc}}</div>
+<div>Content: {{currContent}}</div>
+<div>Children:</div>
+<div ng-repeat="child in currChildren">
+  <a href="/tree/{{child._id}}">{{child.title}}</a>
+</div>
+<div>Ancestors:</div>
+<div ng-repeat="ancestor in currAncestors">
+  <a href="/tree/{{ancestor.id}}">{{ancestor.title}}</a>
+</div>

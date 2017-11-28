@@ -25,12 +25,14 @@ import main from './main/main.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
+import TreeComponent from './tree/tree.component';
+import TreeInfoService from './treeInfo/treeInfo.service';
 
 import './app.scss';
 
 angular.module('honorsConciergeApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io',
   uiRouter, _Auth, account, admin, 'validation.match', navbar, footer, main, constants, socket,
-  util
+  util, TreeComponent, TreeInfoService
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {
