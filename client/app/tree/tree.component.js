@@ -10,12 +10,15 @@ import routes from './tree.routes';
 export class TreeComponent {
 
   /*@ngInject*/
-  constructor($http, $scope, $window, $stateParams, treeService) {
+  constructor($http, $scope, $window, $stateParams, Auth, treeService) {
     this.$http = $http;
     this.$scope = $scope;
     this.$window = $window;
     this.$stateParams = $stateParams;
     this.treeService = treeService;
+    this.isLoggedIn = Auth.isLoggedInAsync;
+    this.isAdmin = Auth.isAdminSync;
+    this.getCurrentUser = Auth.getCurrentUserSync;
   }
 
   $onInit() {
@@ -74,7 +77,7 @@ export default angular.module('honorsConciergeApp.tree', [uiRouter])
   .config(routes)
   .component('tree', {
     template: require('./tree.html'),
-    controller: ['$http', '$scope', '$window', '$stateParams', 'treeInfo', TreeComponent],
+    controller: ['$http', '$scope', '$window', '$stateParams', 'Auth', 'treeInfo', TreeComponent],
     controllerAs: 'treeCtrl'
   })
   .name;
