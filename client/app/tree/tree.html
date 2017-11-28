@@ -2,8 +2,7 @@
 <input type="text" ng-model="nodeTitle">
 <input type="text" ng-model="nodeDesc">
 <input type="text" ng-model="nodeContent">
-<input type="text" ng-model="nodeChildren">
-<input type="text" ng-model="nodeAncestors">
+<input type="text" ng-model="nodeAncestorTitle">
 <button ng-click="treeCtrl.addNode()">Submit</button>
 <div ng-model="treeCtrl.message"></div>
 
@@ -11,8 +10,11 @@
 <div>Title: {{currTitle}}</div>
 <div>Description: {{currDesc}}</div>
 <div>Content: {{currContent}}</div>
-<div>Children: </div>
+<div>Children:</div>
 <div ng-repeat="child in currChildren">
-  <a href="/tree/{{child}}">Link</a>
+  <a href="/tree/{{child._id}}">{{child.title}}</a>
 </div>
-<div>Ancestors: {{currAncestors}}</div>
+<div>Ancestors:</div>
+<div ng-repeat="ancestor in currAncestors">
+  <a href="/tree/{{ancestor.id}}">{{ancestor.title}}</a>
+</div>
