@@ -2,40 +2,20 @@
 const angular = require('angular');
 
 /*@ngInject*/
-export function treeInfoService($http) {
+export function treeInfoService($http, $stateParams) {
   // AngularJS will instantiate a singleton by calling "new" on this function
 
-  var getTreeInfo = function(nodeId) {
+  var nodeId = $stateParams.treeId;
+
+  var getTreeInfo = function() {
     return $http({
       method: 'GET',
       url: `/api/nodes/${nodeId}`
     });
   };
 
-  var addNode = function(nodeInfo) {
-    return $http({
-      method: 'POST',
-      url: '/api/nodes',
-      data: nodeInfo
-    });
-  };
-
-  var updateNodeChildren = function(nodeId, children) {
-    return $http({
-      method: 'PATCH',
-      url: `/api/nodes/${nodeId}`,
-      data: [{
-        op: 'replace',
-        path: '/children',
-        value: children
-      }]
-    });
-  };
-
   return {
-    getTreeInfo,
-    addNode,
-    updateNodeChildren
+    getTreeInfo
   };
 }
 

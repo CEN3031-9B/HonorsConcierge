@@ -1,20 +1,129 @@
-<div>This is the tree view.</div>
-<input type="text" ng-model="nodeTitle">
-<input type="text" ng-model="nodeDesc">
-<input type="text" ng-model="nodeContent">
-<input type="text" ng-model="nodeAncestorTitle">
-<button ng-click="treeCtrl.addNode()">Submit</button>
-<div ng-model="treeCtrl.message"></div>
+<!DOCTYPE html>
+<html>
 
-<div>Tree info</div>
-<div>Title: {{currTitle}}</div>
-<div>Description: {{currDesc}}</div>
-<div>Content: {{currContent}}</div>
-<div>Children:</div>
-<div ng-repeat="child in currChildren">
-  <a href="/tree/{{child._id}}">{{child.title}}</a>
-</div>
-<div>Ancestors:</div>
-<div ng-repeat="ancestor in currAncestors">
-  <a href="/tree/{{ancestor.id}}">{{ancestor.title}}</a>
-</div>
+<head>
+  <meta charset="utf-8">
+  <title>Honors Concierge Tree View</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/tree.css">
+</head>
+
+<body>
+
+                                      <!-- HEADER -->
+
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper" id="nav">
+        <a href="index.html" class="brand-logo"><img src="http://identity.ufl.edu/wp-content/uploads/2015/10/uf.png" alt="Brand Center"></a>
+        <h1>Honors Concierge</h1>
+        <ul id="nav-mobile" class="right hide-on-med-and-down flow-text">
+        <!-- <div class="search-wrapper">
+        <li class="search"><input id="search" placeholder="search"></li>
+        </div> -->
+          <li><a href="honors.html">Honors Program</a></li>
+          <li><a href="registration.html">Registration</a></li>
+          <li><a href="degreePlanning.html">Degree Planning</a></li>
+          <li><a href="">Involvement</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+                                    <!-- VIEW TREE -->
+
+
+
+
+  <div class="section">
+      
+
+      
+      <div class="row">
+          
+          <div class="nav-wrapper" id="bread">
+              <div ng-repeat="ancestor in currAncestors">
+                  <a href="/tree/{{ancestor.id}}" class="breadcrumb">{{ancestor.title}}</a>
+              </div>
+          </div>
+          
+          <h1 id="currTitle"><b>{{currTitle}}</b></h1>
+          <div class="card">
+              <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">{{currDesc}}</span>
+                  <p><h1 id="currContent">{{currContent}}</h1></p>
+              </div>
+          </div>
+          <br>
+          <div ng-repeat="child in currChildren">
+              <a href="/tree/{{child._id}}" class="waves-effect waves-light btn-large">{{child.title}}</a>
+          </div>
+ 
+                                    <!-- ADD NODE -->
+
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">Add a tree node:</span>
+                    <form class="container">
+                        <div class = "row">
+                            <div class="input-field col s6">
+                                <input id="nodeTitle" type="text" ng-model="nodeTitle">
+                                    <label for="nodeTitle">Branch</label>
+                                    </div>
+                            <div class="input-field col s6">
+                                <input id="nodeDesc" type="text" ng-model="nodeDesc">
+                                    <label for="nodeDesc">Description</label>
+                                    </div>
+                            <div class="input-field col s12">
+                                <input id="nodeContent" type="text" ng-model="nodeContent">
+                                    <label for="nodeContent">Content</label>
+                                    </div>
+                            <div class="input-field col s12">
+                                <p class="center-align"><button class="btn btn-large waves-effect waves-light" ng-click="treeCtrl.nodeAdd()">Add Node</button></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-field col s12">
+                        <div ng-model="treeCtrl.message">
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+  </div>
+
+
+  </div>
+
+  <!-- <div class="scroll"></div> -->
+
+  <!-- including jQuery CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <footer>
+    <div class="footer-bar">
+      <center>
+        <img src="../../../assets/UF_HonorsProgram.png" style="height: 30px; margin: 10px">
+        <img src="../../../assets/facebook_icon.png" style="height: 35px; margin: 5px">
+        <img src="../../../assets/twitter_icon.png" style="height: 35px; margin: 5px">
+        <img src="../../../assets/instagram_icon.png" style="height: 35px; margin: 5px">
+        <img src="../../../assets/youtube_icon.png" style="height: 35px; margin: 5px">
+        <img src="../../../assets/linked_in_icon.png" style="height: 35px; margin: 5px">
+      </center>
+    </div>
+  </footer>
+</body>
+
+</html>

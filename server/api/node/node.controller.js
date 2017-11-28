@@ -1,4 +1,4 @@
- /**
+/**
  * Using Rails-like standard naming convention for endpoints.
  * GET     /api/nodes              ->  index
  * POST    /api/nodes              ->  create
@@ -27,7 +27,7 @@ function patchUpdates(patches) {
   return function(entity) {
     try {
       // eslint-disable-next-line prefer-reflect
-      jsonpatch.applyPatch(entity, patches, /*validate*/ true);
+      jsonpatch.apply(entity, patches, /*validate*/ true);
     } catch(err) {
       return Promise.reject(err);
     }

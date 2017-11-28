@@ -10,7 +10,6 @@ describe('Service: treeInfo', function() {
     treeInfo = _treeInfo_;
   }));
 
-  //TODO: add testing here
   it('should do something', function() {
     expect(!!treeInfo).to.be.true;
   });
