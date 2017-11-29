@@ -5,7 +5,7 @@ const angular = require('angular');
 export function treeInfoService($http) {
   // AngularJS will instantiate a singleton by calling "new" on this function
 
-  var getTreeInfo = function(nodeId) {
+  var getNodeById = function(nodeId) {
     return $http({
       method: 'GET',
       url: `/api/nodes/${nodeId}`
@@ -33,7 +33,7 @@ export function treeInfoService($http) {
   };
 
   return {
-    getTreeInfo,
+    getNodeById,
     addNode,
     updateNodeChildren
   };

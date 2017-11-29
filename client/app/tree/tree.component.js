@@ -22,7 +22,7 @@ export class TreeComponent {
   }
 
   $onInit() {
-    this.treeService.getTreeInfo(this.$stateParams.treeId)
+    this.treeService.getNodeById(this.$stateParams.treeId)
       .then(res => {
         this.$scope.currId = res.data._id;
         this.$scope.currTitle = res.data.title;
@@ -32,7 +32,7 @@ export class TreeComponent {
         this.$scope.currAncestors = res.data.ancestors;
         this.$scope.currChildren = [];
         async.each(this.$scope.currChildrenIds, (childId, cb) => {
-          this.treeService.getTreeInfo(childId)
+          this.treeService.getNodeById(childId)
             .then(innerRes => {
               this.$scope.currChildren.push(innerRes.data);
               cb();
