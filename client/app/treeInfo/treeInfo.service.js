@@ -12,6 +12,13 @@ export function treeInfoService($http) {
     });
   };
 
+  var getNodes = function() {
+    return $http({
+      method: 'GET',
+      url: '/api/nodes/'
+    });
+  };
+
   var addNode = function(nodeInfo) {
     return $http({
       method: 'POST',
@@ -34,6 +41,7 @@ export function treeInfoService($http) {
 
   return {
     getNodeById,
+    getNodes,
     addNode,
     updateNodeChildren
   };

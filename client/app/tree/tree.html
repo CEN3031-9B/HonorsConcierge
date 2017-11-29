@@ -3,6 +3,7 @@
 <input ng-show="treeCtrl.isAdmin()" type="text" ng-model="nodeDesc">
 <input ng-show="treeCtrl.isAdmin()" type="text" ng-model="nodeContent">
 <input ng-show="treeCtrl.isAdmin()" type="text" ng-model="nodeAncestorTitle">
+<input type="checkbox" ng-model="nodeLeaf">
 <button ng-show="treeCtrl.isAdmin()" ng-click="treeCtrl.addNode()">Submit</button>
 <div ng-model="treeCtrl.message"></div>
 

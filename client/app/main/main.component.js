@@ -1,47 +1,60 @@
+const async = require('async');
+
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import routing from './main.routes';
 
 export class MainController {
-  awesomeThings = [];
-  newThing = '';
+  rootNode = {};
 
   /*@ngInject*/
-  constructor($http, $scope, socket) {
+  constructor($http, $scope, treeService) {
     this.$http = $http;
-    this.socket = socket;
-
-    $scope.$on('$destroy', function() {
-      socket.unsyncUpdates('thing');
-    });
+    this.$scope = $scope;
+    this.treeService = treeService;
   }
 
   $onInit() {
-    this.$http.get('/api/things')
-      .then(response => {
-        this.awesomeThings = response.data;
-        this.socket.syncUpdates('thing', this.awesomeThings);
+    this.treeService.getNodes()
+      .then(res => {
+        var rootNode = res.data.filter(findRoot)[0];
+        this.rootNode = rootNode;
+        this.$scope.rootNode = rootNode;
+        this.renderChildren(this.rootNode.children);
       });
   }
 
-  addThing() {
-    if(this.newThing) {
-      this.$http.post('/api/things', {
-        name: this.newThing
-      });
-      this.newThing = '';
-    }
+  renderChildren(children) {
+    async.each(children, (childId, cb) => {
+      this.treeService.getNodeById(childId)
+        .then(innerRes => {
+          console.log(innerRes);
+          switch (innerRes.data.title) {
+          case 'Honors Program':
+            this.$scope.honorsProgramId = childId;
+            break;
+          case 'Registration':
+            this.$scope.registrationId = childId;
+            break;
+          case 'Degree Planning':
+            this.$scope.degreePlanningId = childId;
+            break;
+          }
+          return cb();
+        });
+    });
   }
 
-  deleteThing(thing) {
-    this.$http.delete(`/api/things/${thing._id}`);
-  }
+}
+
+function findRoot(node) {
+  return node.isRoot;
 }
 
 export default angular.module('honorsConciergeApp.main', [uiRouter])
   .config(routing)
   .component('main', {
     template: require('./main.html'),
-    controller: MainController
+    controller: ['$http', '$scope', 'treeInfo', MainController]
   })
   .name;
