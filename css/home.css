@@ -28,6 +28,11 @@ html, body {
   line-height: 75%;
   font-size: 3.5vw;
 }
+.dropdown-content li > a, .dropdown-content li > span {
+    color: #fb8c00 !important;
+}
+
+
 
 /*#nav-mobile {
   opacity: 0;

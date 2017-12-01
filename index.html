@@ -16,9 +16,7 @@
 </head>
 
 <body>
-
-                                      <!-- HEADER -->
-
+                           <!-- HEADER -->
   <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper" id="nav">
@@ -28,16 +26,44 @@
         <!-- <div class="search-wrapper">
         <li class="search"><input id="search" placeholder="search"></li>
         </div> -->
-          <li><a href="honors.html">Honors Program</a></li>
-          <li><a href="registration.html">Registration</a></li>
-          <li><a href="degreePlanning.html">Degree Planning</a></li>
-          <li><a href="">Involvement</a></li>
+          <li><a class="dropdown-button" data-beloworigin='true' data-hover="true" href="#!" data-activates="dropdown1">Honors Program</a></li>
+          <ul id='dropdown1' class='dropdown-content'>
+            <div class = 'dropdown_content'>
+            <li><a href="#!">Registration</a></li>
+            <li><a href="#!">Advising</a></li>
+            <li><a href="#!">Requirements</a></li>
+            <li><a href="#!">Courses</a></li>
+          </div>
+          </ul>
+
+          <li><a class="dropdown-button" data-beloworigin='true' data-hover="true" href="#!" data-activates="dropdown2">Registration</a></li>
+          <ul id='dropdown2' class='dropdown-content'>
+            <li><a href="#!">First</a></li>
+            <li><a href="#!">Second</a></li>
+            <li><a href="#!">Third</a></li>
+            <li><a href="#!">Fourth</a></li>
+          </ul>
+
+          <li><a class="dropdown-button" data-beloworigin='true' data-hover="true" href="#!" data-activates="dropdown3">Degree Planning</a></li>
+          <ul id='dropdown3' class='dropdown-content'>
+            <li><a href="#!">First</a></li>
+            <li><a href="#!">Second</a></li>
+            <li><a href="#!">Third</a></li>
+            <li><a href="#!">Fourth</a></li>
+          </ul>
+
+          <li><a class="dropdown-button" data-beloworigin='true' data-hover="true" href="#!" data-activates="dropdown4">Involvement</a></li>
+          <ul id='dropdown4' class='dropdown-content'>
+            <li><a href="#!">First</a></li>
+            <li><a href="#!">Second</a></li>
+            <li><a href="#!">Third</a></li>
+            <li><a href="#!">Fourth</a></li>
+          </ul>
         </ul>
       </div>
     </nav>
   </div>
                                     <!-- HOME PLATE -->
-
   <div class="section">
     <h1 id="question"><b>What can we help you with today?</b></h1>
 
@@ -125,7 +151,7 @@
   <!-- including jQuery CDN -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
   <footer>
     <div class="footer-bar">
       <center>

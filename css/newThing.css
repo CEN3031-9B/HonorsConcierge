@@ -1,0 +1,9 @@
+html, body {
+  background-color: #fff;
+  font-family: "Roboto";
+  height: 100%;
+  width: 100%;
+}
+.lol{
+  position: fixed;
+}
