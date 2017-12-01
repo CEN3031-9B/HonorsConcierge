@@ -26,7 +26,7 @@ function registerEvents(Node) {
 
 function emitEvent(event) {
   return function(doc) {
-    NodeEvents.emit(event + ':' + doc._id, doc);
+    NodeEvents.emit(`${event}:${doc._id}`, doc);
     NodeEvents.emit(event, doc);
   };
 }

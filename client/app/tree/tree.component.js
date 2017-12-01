@@ -54,7 +54,9 @@ export class TreeComponent {
       description: this.$scope.nodeDesc,
       content: this.$scope.nodeContent,
       children: [],
-      ancestors: newAncestors
+      ancestors: newAncestors,
+      isLeaf: this.$scope.nodeLeaf,
+      isRoot: false
     };
     this.treeService.addNode(newNode).then(res => {
       this.$scope.currChildrenIds.push(res.data._id);
