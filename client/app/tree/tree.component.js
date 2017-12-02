@@ -157,8 +157,7 @@ export class TreeComponent {
             this.$scope.currChildren.splice(indexOfGoneChild, 1);
             return cb(null);
           });
-        }, res => {
-          console.log(`ERROR: ${res}`);
+        }, () => {
           cb(DELETION_ERR);
         });
       },
