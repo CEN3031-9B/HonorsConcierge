@@ -2,9 +2,10 @@
 const angular = require('angular');
 
 /*@ngInject*/
-export function treeInfoService($http) {
+export function treeService($http, $q) {
   // AngularJS will instantiate a singleton by calling "new" on this function
 
+  //TODO: decouple the crap outta these HTML requests
   var getNodeById = function(nodeId) {
     return $http({
       method: 'GET',
@@ -39,14 +40,39 @@ export function treeInfoService($http) {
     });
   };
 
+  var deleteNode = function(nodeId) {
+    return $http({
+      method: 'DELETE',
+      url: `/api/nodes/${nodeId}`
+    });
+  };
+
+  var verifyNode = function(nodeId) {
+    return $q(function(resolve, reject) {
+      $http({
+        method: 'GET',
+        url: `/api/nodes/${nodeId}`
+      }).then(function(res) {
+        if(res.status === 200 || res.status === 304) {
+          return resolve(true);
+        }
+        return reject(false);
+      }, function() {
+        return reject(false);
+      });
+    });
+  };
+
   return {
     getNodeById,
     getNodes,
     addNode,
-    updateNodeChildren
+    updateNodeChildren,
+    deleteNode,
+    verifyNode
   };
 }
 
-export default angular.module('honorsConciergeApp.treeInfo', [])
-  .service('treeInfo', treeInfoService)
+export default angular.module('honorsConciergeApp.treeService', [])
+  .service('treeService', treeService)
   .name;
