@@ -3,9 +3,9 @@
 <input ng-show="treeCtrl.isAdmin()" type="text" ng-model="nodeDesc">
 <input ng-show="treeCtrl.isAdmin()" type="text" ng-model="nodeContent">
 <input ng-show="treeCtrl.isAdmin()" type="text" ng-model="nodeAncestorTitle">
-<input type="checkbox" ng-model="nodeLeaf">
+<input ng-show="treeCtrl.isAdmin()" type="checkbox" ng-model="nodeLeaf">
 <button ng-show="treeCtrl.isAdmin()" ng-click="treeCtrl.addNode()">Submit</button>
-<div ng-model="treeCtrl.message"></div>
+<div ng-show="treeCtrl.isAdmin()">{{message}}</div>
 
 <div>Tree info</div>
 <div>Title: {{currTitle}}</div>
@@ -14,6 +14,7 @@
 <div>Children:</div>
 <div ng-repeat="child in currChildren">
   <a href="/tree/{{child._id}}">{{child.title}}</a>
+  <button ng-click="treeCtrl.deleteNode(child._id)">Delete</button>
 </div>
 <div>Ancestors:</div>
 <div ng-repeat="ancestor in currAncestors">

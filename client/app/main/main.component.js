@@ -55,6 +55,6 @@ export default angular.module('honorsConciergeApp.main', [uiRouter])
   .config(routing)
   .component('main', {
     template: require('./main.html'),
-    controller: ['$http', '$scope', 'treeInfo', MainController]
+    controller: ['$http', '$scope', 'treeService', MainController]
   })
   .name;
