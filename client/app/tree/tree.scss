@@ -1,0 +1,154 @@
+html, body {
+background-color: #fff;
+font-family: "Roboto";
+height: 100%;
+width: 100%;
+}
+
+.navbar-fixed {
+height: 100px;
+overflow: hidden;
+}
+
+.navbar-fixed img {
+height: 100px;
+vertical-align: middle;
+}
+
+.navbar-fixed nav {
+position: fixed;
+height: 100px;
+background-color: #084b81;
+border-bottom: 8px solid #db662c;
+}
+
+.nav-wrapper h1 {
+position: absolute;
+padding-left: 100px;
+line-height: 75%;
+font-size: 3.5vw;
+}
+
+
+#bread {
+color: #fff;
+background-color: #6495ED;
+width: 100%;
+text-align: left;
+line-height: 40px;
+border-radius: 8px;
+box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.delete-node {
+text-decoration: none;
+color: #fff;
+background-color: #084b81;
+width: 200px;
+text-align: center;
+letter-spacing: .5px;
+}
+
+#nav-mobile a {
+height: inherit;
+line-height: 5;
+font-size: .8em;
+}
+
+nav li {
+height: 100px;
+}
+
+.search input {
+width: 200px;
+margin: 0 auto;
+color: white;
+}
+
+.search-input {
+position: relative;
+margin: 0 auto;
+width: 50%;
+padding: 10px 0;
+}
+
+
+#currTitle {
+text-align: center;
+font-family: "Roboto";
+color: white;
+font-size: 3vw;
+white-space: nowrap;
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+#currContent {
+text-align: center;
+font-family: "Roboto";
+color: black;
+font-size: 1.25vw;
+white-space: nowrap;
+}
+
+
+#currDesc {
+text-align: center;
+font-family: "Roboto";
+color: white;
+font-size: 2.5vw;
+white-space: nowrap;
+}
+
+.section {
+width: 100%;
+padding-left: 0;
+padding-right: 0;
+position: absolute;
+text-align: center;
+display: flex;
+flex-direction: column;
+background: transparent;
+background-image: url('https://static.pexels.com/photos/268407/pexels-photo-268407.jpeg');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+background-size: cover;
+letter-spacing: 1px;
+}
+
+.row {
+padding-top: 3%;
+}
+
+@keyframes fadeOutDown {
+0% {
+opacity: 1;
+transform: none;
+}
+
+100% {
+opacity: 0;
+transform: translate3d(0, 100%, 0);
+}
+}
+
+.btn-large {
+text-decoration: none;
+color: #fff;
+background-color: #084b81;
+width: 200px;
+text-align: center;
+letter-spacing: .5px;
+}
+
+.card {
+background: #fff;
+border-radius: 10px;
+box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+transition: transform 300ms ease-in-out;
+}
+
+.card-title {
+white-space: nowrap;
+}
+
