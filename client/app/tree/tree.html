@@ -1,20 +1,115 @@
-<div>This is the tree view.</div>
-<input ng-show="treeCtrl.isAdmin()" type="text" ng-model="nodeTitle">
-<input ng-show="treeCtrl.isAdmin()" type="text" ng-model="nodeDesc">
-<input ng-show="treeCtrl.isAdmin()" type="text" ng-model="nodeContent">
-<input ng-show="treeCtrl.isAdmin()" type="text" ng-model="nodeAncestorTitle">
-<button ng-show="treeCtrl.isAdmin()" ng-click="treeCtrl.addNode()">Submit</button>
-<div ng-model="treeCtrl.message"></div>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+            <title>Honors Concierge Tree View</title>
+            <!--Import Google Icon Font-->
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                <!--Import materialize.css-->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+                    
+                    <!--Let browser know website is optimized for mobile-->
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+                        <link rel="stylesheet" href="../../../css/tree.css">
+    </head>
+    
+    <body>
 
-<div>Tree info</div>
-<div>Title: {{currTitle}}</div>
-<div>Description: {{currDesc}}</div>
-<div>Content: {{currContent}}</div>
-<div>Children:</div>
-<div ng-repeat="child in currChildren">
-  <a href="/tree/{{child._id}}">{{child.title}}</a>
+                                        <!-- TREE TEMPLATE -->
+
+<div class="section">
+    <div class="row">
+        
+                                        <!-- BREADCRUMBS -->
+        <div class="nav-wrapper" id="bread">
+            <div ng-repeat="ancestor in currAncestors">
+                <a href="/tree/{{ancestor.id}}" class="breadcrumb">{{ancestor.title}}</a>
+            </div>
+        </div>
+
+        <h1 id="currTitle"><b>{{currTitle}}</b></h1>
+        
+
+
+                                        <!-- TREE CURRENT NODE -->
+        <div class="row">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">{{currDesc}}</span>
+                    <p><h1 id="currContent">{{currContent}}</h1></p>
+                </div>
+            </div>
+        </div>
+
+                                        <!-- CHILDREN -->
+
+        <div class="row">
+            <div ng-repeat="child in currChildren">
+                <a href="/tree/{{child._id}}" class="waves-effect waves-light btn-large">{{child.title}}</a>
+            </div>
+        </div>
+
+                                        <!-- ADMIN: DELETE CHILD -->
+
+        <div class="row">
+            <button ng-show="treeCtrl.isAdmin() ng-click="treeCtrl.deleteNode(child._id)" class="waves-effect waves-light btn" id="childButton">Delete {{child.title}}</button>
+        </div>
+ 
+    </div>
+        
+                                        <!-- ADMIN: ADD NODE -->
+                
+    <div class="row" ng-show="treeCtrl.isAdmin()">
+        <div class="col s12 m12">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">Add a tree node:</span>
+                        <form class="container">
+                            <div class = "row">
+                                <div class="input-field col s6">
+                                    <input ng-show="treeCtrl.isAdmin()" id="nodeTitle" type="text" ng-model="nodeTitle">
+                                    <label for="nodeTitle">Branch</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input ng-show="treeCtrl.isAdmin()" id="nodeDesc" type="text" ng-model="nodeDesc">
+                                    <label for="nodeDesc">Description</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input ng-show="treeCtrl.isAdmin()" id="nodeContent" type="text" ng-model="nodeContent">
+                                    <label for="nodeContent">Content</label>
+                                </div>
+                                <div class="input-field col s6">
+                                <input ng-show="treeCtrl.isAdmin()" type="text" ng-model="nodeAncestorTitle">
+                                <label for="nodeAncestorTitle">Node Ancestor</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input ng-show="treeCtrl.isAdmin()" id="nodeCheck" type="checkbox" ng-model="nodeContent">
+                                    <label for="nodeCheck">This is a leaf node</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <p class="center-align"><button ng-show="treeCtrl.isAdmin()" class="btn btn-large waves-effect waves-light"  ng-click="treeCtrl.nodeAdd()">Add Node</button></p>
+                                </div>
+                            </div>
+                        <div ng-show="treeCtrl.isAdmin()" class="input-field col s12">
+                            <div ng-show="treeCtrl.isAdmin()" ng-model="treeCtrl.message">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </div>
-<div>Ancestors:</div>
-<div ng-repeat="ancestor in currAncestors">
-  <a href="/tree/{{ancestor.id}}">{{ancestor.title}}</a>
-</div>
+
+        <!-- <div class="scroll"></div> -->
+        
+        <!-- including jQuery CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        
+    </body>
+    
+</html>
