@@ -1,4 +1,4 @@
-                                  <!-- HOME PLATE -->
+                                                    <!-- HOME PLATE -->
 
 <div class="section">
   <h1 id="question"><b>What can we help you with today?</b></h1>
@@ -6,77 +6,79 @@
   <div class="search-input">
     <input type="text" name="search" placeholder="Search..." onfocus="deleteSearch(this)" onfocusout="addSearch(this)">
   </div>
-  <!-- CARDS -->
-<div class="row flow-text">
+                                                    <!-- CARDS -->
+  <div class="row flow-text">
 
-  <!-- HONORS PROGRAM CARD -->
-  <div class="col s12 m6 l3">
-    <div class="card">
-      <div class="card-image waves-effect waves-block waves-light">
-        <input type="image" src="assets/honors_alt.png" style="width: 100%;" onclick="window.location = './routes/honors.html';"/>
+                                              <!-- HONORS PROGRAM CARD -->
+    <div class="col s12 m6 l3">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <input type="image" src="assets/honors_alt.png" style="width: 100%;" onclick="window.location = './routes/honors.html';"/>
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">Honors Program<i class="material-icons right">more_vert</i></span>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Honors Program<i class="material-icons right">close</i></span>
+          <p>Filler Info</p>
+          <a href="honors.html" class="waves-effect orange accent-4 btn-large">View</a>
+        </div>
       </div>
-      <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">Honors Program<i class="material-icons right">more_vert</i></span>
+    </div>
+
+
+                                              <!-- REGISTRATION CARD -->
+    <div class="col s12 m6 l3">
+      <div class="card" id="card2">
+        <div class="card-image waves-effect waves-block waves-light">
+          <input type="image" src="assets/register_alt.png" style="width: 100%;" onclick="window.location = './routes/registration.html';"/>
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">Registration<i class="material-icons right">more_vert</i></span>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Registration<i class="material-icons right">close</i></span>
+          <p>Filler Info</p>
+          <a href="registration.html" class="waves-effect orange accent-4 btn-large">View</a>
+        </div>
       </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Honors Program<i class="material-icons right">close</i></span>
-        <p>Filler Info</p>
-        <a href="honors.html" class="waves-effect orange accent-4 btn-large">View</a>
+    </div>
+
+
+                                            <!-- DEGREE PLANNING CARD -->
+      <div class="col s12 m6 l3">
+        <div class="card" id="card3">
+          <div class="card-image waves-effect waves-block waves-light">
+            <input type="image" src="assets/planning_alt.png" style="width: 100%;" onclick="window.location = './routes/degreePlanning.html';"/>
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">Degree Planning<i class="material-icons right">more_vert</i></span>
+          </div>
+          <div class="card-reveal container">
+            <span class="card-title grey-text text-darken-4">Degree Planning<i class="material-icons right">close</i></span>
+            <p>Filler info</p>
+            <a href="degreePlanning.html" class="waves-effect orange accent-4 btn-large">View</a>
+          </div>
+        </div>
       </div>
+
+
+                                              <!-- INVOLVEMENT CARD -->
+      <div class="col s12 m6 l3">
+        <div class="card" id="card4">
+          <div class="card-image waves-effect waves-block waves-light">
+            <input type="image" src="assets/involvement_alt.png" style="width: 100%;"/>
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">Involvement<i class="material-icons right">more_vert</i></span>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Involvement<i class="material-icons right">close</i></span>
+            <p style="font-weight: 100;">Filler Info</p>
+            <a href="#" class="waves-effect orange accent-4 btn-large">View</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
-
-
-  <!-- REGISTRATION CARD -->
-  <div class="col s12 m6 l3">
-    <div class="card" id="card2">
-      <div class="card-image waves-effect waves-block waves-light">
-        <input type="image" src="assets/register_alt.png" style="width: 100%;" onclick="window.location = './routes/registration.html';"/>
-      </div>
-      <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">Registration<i class="material-icons right">more_vert</i></span>
-      </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Registration<i class="material-icons right">close</i></span>
-        <p>Filler Info</p>
-        <a href="registration.html" class="waves-effect orange accent-4 btn-large">View</a>
-      </div>
-    </div>
-
-
-  <!-- DEGREE PLANNING CARD -->
-  <div class="col s12 m6 l3">
-    <div class="card" id="card3">
-      <div class="card-image waves-effect waves-block waves-light">
-        <input type="image" src="assets/planning_alt.png" style="width: 100%;" onclick="window.location = './routes/degreePlanning.html';"/>
-      </div>
-      <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">Degree Planning<i class="material-icons right">more_vert</i></span>
-      </div>
-      <div class="card-reveal container">
-        <span class="card-title grey-text text-darken-4">Degree Planning<i class="material-icons right">close</i></span>
-        <p>Filler info</p>
-        <a href="degreePlanning.html" class="waves-effect orange accent-4 btn-large">View</a>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- INVOLVEMENT CARD -->
-  <div class="col s12 m6 l3">
-    <div class="card" id="card4">
-      <div class="card-image waves-effect waves-block waves-light">
-        <input type="image" src="assets/involvement_alt.png" style="width: 100%;"/>
-      </div>
-      <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">Involvement<i class="material-icons right">more_vert</i></span>
-      </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Involvement<i class="material-icons right">close</i></span>
-        <p style="font-weight: 100;">Filler Info</p>
-        <a href="#" class="waves-effect orange accent-4 btn-large">View</a>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
