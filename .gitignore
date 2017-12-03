@@ -10,7 +10,7 @@ dist
 npm-debug.log
 coverage
 
-.envrc
+\.envrc
 
 # Created by https://www.gitignore.io/api/vim,node,linux,macos,xcode,emacs,windows,notepadpp,sublimetext
 
