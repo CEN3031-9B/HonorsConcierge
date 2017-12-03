@@ -1,8 +1,84 @@
-<div>{{rootNode}}</div>
-<div>{{honorsProgramId}}</div>
-<div>{{registrationId}}</div>
-<div>{{degreePlanningId}}</div>
+ <!-- HOME PLATE -->
 
-<a href="/tree/{{honorsProgramId}}">Honors Program</a>
-<a href="/tree/{{registrationId}}">Registration</a>
-<a href="/tree/{{degreePlanningId}}">Degree Planning</a>
+<div class="section">
+  <h1 id="question"><b>What can we help you with today?</b></h1>
+
+  <div class="search-input">
+    <input type="text" name="search" placeholder="Search...">
+  </div>
+                                                    <!-- CARDS -->
+  <div class="row flow-text">
+
+                                              <!-- HONORS PROGRAM CARD -->
+    <div class="col s12 m6 l3">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <input type="image" src="assets/images/honors_alt.png" style="width: 100%;" ng-click="$ctrl.goToChild(honorsProgramId)">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">Honors Program<i class="material-icons right">more_vert</i></span>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Honors Program<i class="material-icons right">close</i></span>
+          <p>Filler Info</p>
+          <a href="/tree/{{honorsProgramId}}" class="waves-effect orange accent-4 btn-large">View</a>
+        </div>
+      </div>
+    </div>
+
+
+                                              <!-- REGISTRATION CARD -->
+    <div class="col s12 m6 l3">
+      <div class="card" id="card2">
+        <div class="card-image waves-effect waves-block waves-light">
+          <input type="image" src="assets/images/register_alt.png" style="width: 100%;" ng-click="$ctrl.goToChild(registrationId)"/>
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">Registration<i class="material-icons right">more_vert</i></span>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Registration<i class="material-icons right">close</i></span>
+          <p>Filler Info</p>
+          <a href="/tree/{{registrationId}}" class="waves-effect orange accent-4 btn-large">View</a>
+        </div>
+      </div>
+    </div>
+
+
+                                            <!-- DEGREE PLANNING CARD -->
+      <div class="col s12 m6 l3">
+        <div class="card" id="card3">
+          <div class="card-image waves-effect waves-block waves-light">
+            <input type="image" src="assets/images/planning_alt.png" style="width: 100%;" ng-click="$ctrl.goToChild(degreePlanningId)"/>
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">Degree Planning<i class="material-icons right">more_vert</i></span>
+          </div>
+          <div class="card-reveal container">
+            <span class="card-title grey-text text-darken-4">Degree Planning<i class="material-icons right">close</i></span>
+            <p>College advisors, pre-professional programs, areas of study, and tracking requirements</p>
+            <a href="/tree/{{degreePlanningId}}" class="waves-effect orange accent-4 btn-large">View</a>
+          </div>
+        </div>
+      </div>
+
+
+                                              <!-- CONTACT CARD -->
+      <div class="col s12 m6 l3">
+        <div class="card" id="card4">
+          <div class="card-image waves-effect waves-block waves-light">
+            <input type="image" src="assets/images/involvement_alt.png" style="width: 100%;"/>
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">Contact<i class="material-icons right">more_vert</i></span>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Contact<i class="material-icons right">close</i></span>
+            <p style="font-weight: 100;">Honors Program departmental contact information</p>
+            <a href="#" class="waves-effect orange accent-4 btn-large">View</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
