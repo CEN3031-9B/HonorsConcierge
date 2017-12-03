@@ -8,9 +8,10 @@ export class MainController {
   rootNode = {};
 
   /*@ngInject*/
-  constructor($http, $scope, treeService) {
+  constructor($http, $scope, $window, treeService) {
     this.$http = $http;
     this.$scope = $scope;
+    this.$window = $window;
     this.treeService = treeService;
   }
 
@@ -28,7 +29,6 @@ export class MainController {
     async.each(children, (childId, cb) => {
       this.treeService.getNodeById(childId)
         .then(innerRes => {
-          console.log(innerRes);
           switch (innerRes.data.title) {
           case 'Honors Program':
             this.$scope.honorsProgramId = childId;
@@ -45,6 +45,10 @@ export class MainController {
     });
   }
 
+  goToChild(childId) {
+    this.$window.location.href = `/tree/${childId}`;
+  }
+
 }
 
 function findRoot(node) {
@@ -55,6 +59,6 @@ export default angular.module('honorsConciergeApp.main', [uiRouter])
   .config(routing)
   .component('main', {
     template: require('./main.html'),
-    controller: ['$http', '$scope', 'treeService', MainController]
+    controller: ['$http', '$scope', '$window', 'treeService', MainController]
   })
   .name;

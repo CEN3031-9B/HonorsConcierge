@@ -1,0 +1,33 @@
+.navbar-fixed {
+  height: 100px;
+  overflow: hidden;
+}
+
+.navbar-fixed img {
+  height: 100px;
+  vertical-align: middle;
+}
+
+.navbar-fixed nav {
+  position: fixed;
+  height: 100px;
+  background-color: #084b81;
+  border-bottom: 8px solid #db662c;
+}
+
+.nav-wrapper h1 {
+  position: absolute;
+  padding-left: 100px;
+  line-height: 75%;
+  font-size: 3.5vw;
+}
+
+#nav-mobile a {
+  height: inherit;
+  line-height: 5;
+  font-size: .8em;
+}
+
+nav li {
+  height: 100px;
+}
