@@ -1,0 +1,45 @@
+<div class="bg-contact">
+    
+    
+    <div class="row">
+        
+        <div class="col s10 offset-s1">
+            <div class="card" id="contactCard">
+                <div class="card-image">
+                    <img src="../../assets/images/honors_gator.png">
+                        </div>
+                <div class="card-content">
+                    <span class="card-title" id="dept">Departmental Contact Information</span>
+                    <div class="divider"></div>
+                    <ul class="collapsible" data-collapsible="accordion">
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">add_location</i>Location</div>
+                            <div class="collapsible-body"><span>Departmental address:<br>
+                                343 Infirmary<br>
+                                280 Fletcher Drive<br>
+                                University of Florida<br>
+                                Gainesville, FL 32611-3260</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">phone</i>Phone</div>
+                            <div class="collapsible-body"><span>Departmental phone number: (352) 392-1519</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">email</i>Email</div>
+                            <div class="collapsible-body"><span>Departmental email address: <a href="mailto:honorssa@mail.ufl.edu">honorssa@mail.ufl.edu</a></span>
+                        </li>
+                    </ul>
+                    
+                </div>
+
+            </div>
+        </div>
+        
+        
+    <script>
+        $('.collapsible').collapsible({
+                                      accordion: true, // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+                                      onOpen: function(el) { }, // Callback for Collapsible open
+                                      onClose: function(el) { } // Callback for Collapsible close
+                                      });
+    </script>
