@@ -17,6 +17,9 @@ import routes from './tree.routes';
 
 export class TreeComponent {
 
+  isLoggedIn = false;
+  isAdmin = false;
+  getCurrentUser = {};
   leafClicked = false;
 
   /*@ngInject*/
@@ -57,6 +60,9 @@ export class TreeComponent {
   }
 
   addNode() {
+    if(!this.isAdmin) {
+      return;
+    }
     const newAncestors = angular.copy(this.$scope.currAncestors);
     newAncestors.push({
       title: this.$scope.nodeAncestorTitle,
@@ -113,6 +119,9 @@ export class TreeComponent {
   }
 
   deleteNode(nodeId) {
+    if(!this.isAdmin) {
+      return;
+    }
     async.series([
       cb => {
         this.treeService.verifyNode(this.$scope.currId).then(valid => {
