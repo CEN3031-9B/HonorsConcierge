@@ -17,9 +17,6 @@ import routes from './tree.routes';
 
 export class TreeComponent {
 
-  isLoggedIn = false;
-  isAdmin = false;
-  getCurrentUser = {};
   leafClicked = false;
 
   /*@ngInject*/
@@ -29,9 +26,7 @@ export class TreeComponent {
     this.$window = $window;
     this.$stateParams = $stateParams;
     this.treeService = treeService;
-    this.isLoggedIn = Auth.isLoggedInAsync;
     this.isAdmin = Auth.isAdminSync; // eslint-disable-line no-sync
-    this.getCurrentUser = Auth.getCurrentUserSync; // eslint-disable-line no-sync
   }
 
   $onInit() {
@@ -60,7 +55,7 @@ export class TreeComponent {
   }
 
   addNode() {
-    if(!this.isAdmin) {
+    if(!this.isAdmin()) {
       return;
     }
     const newAncestors = angular.copy(this.$scope.currAncestors);
@@ -119,7 +114,7 @@ export class TreeComponent {
   }
 
   deleteNode(nodeId) {
-    if(!this.isAdmin) {
+    if(!this.isAdmin()) {
       return;
     }
     async.series([
