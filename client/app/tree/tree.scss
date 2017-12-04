@@ -1,4 +1,5 @@
 #bread {
+padding-left: 1%;
   color: #fff;
   background-color: #6495ED;
   width: 100%;
@@ -85,7 +86,7 @@ nav li {
 }
 
 .row {
-  padding-top: 3%;
+
 }
 
 @keyframes fadeOutDown {
@@ -100,13 +101,16 @@ nav li {
   }
 }
 
-.btn-large {
+#sure {
+padding-top: 1%;
+padding-bottom: 1%;
   text-decoration: none;
   color: #fff;
   background-color: #084b81;
-  width: 200px;
-  text-align: center;
-  letter-spacing: .5px;
+height: 100%;
+max-width: 300 px;
+  text-align: left;
+line-height: 20px;
 }
 
 .card {
