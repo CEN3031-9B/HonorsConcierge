@@ -20,6 +20,7 @@ export class TreeComponent {
   isLoggedIn = false;
   isAdmin = false;
   getCurrentUser = {};
+  leafClicked = false;
 
   /*@ngInject*/
   constructor($http, $scope, $window, $stateParams, Auth, treeService) {
@@ -207,6 +208,12 @@ export class TreeComponent {
     });
   }
 
+  showLeaf(leafIndex) {
+    this.leafClicked = true;
+    const currLeaf = this.$scope.currChildren[leafIndex];
+    this.$scope.leafDesc = currLeaf.description;
+    this.$scope.leafCont = currLeaf.content;
+  }
 }
 
 

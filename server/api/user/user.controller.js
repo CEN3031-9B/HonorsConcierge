@@ -60,7 +60,9 @@ export function show(req, res, next) {
       }
       res.json(user.profile);
     })
-    .catch(err => next(err));
+    .catch(err => {
+      next(err);
+    });
 }
 
 /**
@@ -111,7 +113,9 @@ export function me(req, res, next) {
       }
       res.json(user);
     })
-    .catch(err => next(err));
+    .catch(err => {
+      next(err);
+    });
 }
 
 /**
