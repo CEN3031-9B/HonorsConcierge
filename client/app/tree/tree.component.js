@@ -20,7 +20,7 @@ export class TreeComponent {
   leafClicked = false;
 
   /*@ngInject*/
-  constructor($http, $scope, $window, $stateParams, Auth, treeService) {
+  constructor($http, $scope, $window, $state, $stateParams, Auth, treeService) {
     this.$http = $http;
     this.$scope = $scope;
     this.$window = $window;
@@ -52,6 +52,40 @@ export class TreeComponent {
       }, () => {
         this.$window.location.href = '/';
       });
+    this.$scope.isEditing = false;
+  }
+
+  editNode() {
+    if(!this.isAdmin()){
+      this.$state.go('login');
+      return;
+    }
+    const newNode = {
+      title: this.$scope.currTitle,
+      description: this.$scope.currDesc,
+      content: this.$scope.currContent,
+      children: this.$scope.currChildrenIds,
+      ancestors: this.$scope.currAncestors,
+      isLeaf: false,
+      isRoot: false
+    }
+    this.treeService.verifyNode(this.$scope.currId).then((valid) => {
+      if(!valid) {
+        this.$scope.message = 'The current node is missing. Please refresh and try again.';
+        return;
+      }
+      this.treeService.updateNode(newNode, this.$scope.currId)
+        .then(() => {
+          this.$scope.message = 'Node edited successfully';
+        }, () => {
+          this.$scope.message = 'An error occurred';
+      });
+    });
+    this.$scope.isEditing = false;
+  }
+
+  viewEdit(){
+    this.$scope.isEditing = true;
   }
 
   addNode() {
@@ -216,7 +250,7 @@ export default angular.module('honorsConciergeApp.tree', [uiRouter])
   .config(routes)
   .component('tree', {
     template: require('./tree.html'),
-    controller: ['$http', '$scope', '$window', '$stateParams', 'Auth', 'treeService', TreeComponent],
+    controller: ['$http', '$scope', '$window', '$state', '$stateParams', 'Auth', 'treeService', TreeComponent],
     controllerAs: 'treeCtrl'
   })
   .name;

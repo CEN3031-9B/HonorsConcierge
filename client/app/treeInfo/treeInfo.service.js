@@ -6,6 +6,7 @@ export function treeService($http, $q) {
   // AngularJS will instantiate a singleton by calling "new" on this function
 
   //TODO: decouple the crap outta these HTML requests
+
   var getNodeById = function(nodeId) {
     return $http({
       method: 'GET',
@@ -25,6 +26,14 @@ export function treeService($http, $q) {
       method: 'POST',
       url: '/api/nodes',
       data: nodeInfo
+    });
+  };
+
+  var updateNode = function(node, nodeId) {
+    return $http({
+      method: 'PUT',
+      url: `/api/nodes/${nodeId}`,
+      data: node
     });
   };
 
@@ -66,6 +75,7 @@ export function treeService($http, $q) {
   return {
     getNodeById,
     getNodes,
+    updateNode,
     addNode,
     updateNodeChildren,
     deleteNode,
