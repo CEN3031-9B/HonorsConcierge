@@ -31,3 +31,7 @@
 nav li {
   height: 100px;
 }
+
+.dropdown-content li > a, .dropdown-content li > span {
+    color: #fb8c00 !important;
+}
