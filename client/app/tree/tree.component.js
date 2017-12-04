@@ -18,7 +18,7 @@ import routes from './tree.routes';
 export class TreeComponent {
 
   /*@ngInject*/
-  constructor($http, $scope, $window, $stateParams, Auth, treeService) {
+  constructor($http, $scope, $window, $state, $stateParams, Auth, treeService) {
     this.$http = $http;
     this.$scope = $scope;
     this.$window = $window;
@@ -32,7 +32,6 @@ export class TreeComponent {
   $onInit() {
     this.treeService.getNodeById(this.$stateParams.treeId)
       .then(res => {
-        console.log(res.data);
         this.$scope.currId = res.data._id;
         this.$scope.currTitle = res.data.title;
         this.$scope.currDesc = res.data.description;
@@ -53,20 +52,40 @@ export class TreeComponent {
       }, () => {
         this.$window.location.href = '/';
       });
-    this.$scope.isEditing = true;
+    this.$scope.isEditing = false;
   }
 
   editNode() {
+    if(!isAdmin()){
+      this.$state.go('login');
+      return;
+    }
     const newNode = {
       title: this.$scope.currTitle,
       description: this.$scope.currDesc,
       content: this.$scope.currContent,
       children: this.$scope.currChildrenIds,
       ancestors: this.$scope.currAncestors,
-      isLeaf: this.$scope.nodeLeaf,
+      isLeaf: false,
       isRoot: false
     }
-    this.treeService.updateNode(newNode, this.$scope.currId);
+    this.treeService.verifyNode(this.$scope.currId).then((valid) => {
+      if(!valid) {
+        this.$scope.message = 'The current node is missing. Please refresh and try again.';
+        return;
+      }
+      this.treeService.updateNode(newNode, this.$scope.currId)
+        .then(() => {
+          this.$scope.message = 'Node edited successfully';
+        }, () => {
+          this.$scope.message = 'An error occurred';
+      });
+    });
+    this.$scope.isEditing = false;
+  }
+
+  viewEdit(){
+    this.$scope.isEditing = true;
   }
 
   addNode() {
@@ -219,7 +238,7 @@ export default angular.module('honorsConciergeApp.tree', [uiRouter])
   .config(routes)
   .component('tree', {
     template: require('./tree.html'),
-    controller: ['$http', '$scope', '$window', '$stateParams', 'Auth', 'treeService', TreeComponent],
+    controller: ['$http', '$scope', '$window', '$state', '$stateParams', 'Auth', 'treeService', TreeComponent],
     controllerAs: 'treeCtrl'
   })
   .name;
