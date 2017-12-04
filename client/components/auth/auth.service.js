@@ -83,7 +83,6 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
         currentUser = User.get();
         return safeCb(callback)(null, user);
       }, function(err) {
-        Auth.logout();
         return safeCb(callback)(err);
       })
         .$promise;
