@@ -15,11 +15,11 @@
             </div>
         </div>
 
-        <h1 id="currTitle"><b>{{currTitle}}</b></h1>
 
 
 
                                         <!-- TREE CURRENT NODE -->
+        <h1 id="currTitle" ng-show="treeCtrl.isAdmin()"><b>{{currTitle}}</b></h1>
         <div class="row">
             <div class="card">
                 <div class="card-content">
@@ -48,7 +48,7 @@
                                         <!-- CHILDREN -->
 
         <div class="row">
-            <div ng-repeat="child in currChildren">
+            <div ng-repeat="child in currChildren" style="display: inline-block;">
 
               <a ng-if="!child.isLeaf" href="/tree/{{child._id}}" class="waves-effect waves-light btn-large">{{child.title}}</a>
               <a ng-if="child.isLeaf" ng-click="treeCtrl.showLeaf($index)" class="waves-effect waves-light btn-large orange">{{child.title}}</a>
@@ -80,15 +80,15 @@
                                     <label for="nodeDesc">Description</label>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input ng-show="treeCtrl.isAdmin()" id="nodeContent" type="text" ng-model="nodeContent">
+                                    <textarea ng-show="treeCtrl.isAdmin()" id="nodeContent" type="text" ng-model="nodeContent"></textarea>
                                     <label for="nodeContent">Content</label>
                                 </div>
                                 <div class="input-field col s6">
                                 <input ng-show="treeCtrl.isAdmin()" type="text" ng-model="nodeAncestorTitle">
                                 <label for="nodeAncestorTitle">Node Ancestor</label>
                                 </div>
-                                <div class="input-field col s6">
-                                    <input ng-show="treeCtrl.isAdmin()" id="nodeCheck" type="checkbox" ng-model="nodeContent">
+                                <div class="col s6">
+                                    <input ng-show="treeCtrl.isAdmin()" id="nodeCheck" type="checkbox" ng-model="nodeLeaf">
                                     <label for="nodeCheck">This is a leaf node</label>
                                 </div>
                                 <div class="input-field col s6">

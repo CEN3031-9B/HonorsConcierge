@@ -56,7 +56,7 @@ export class TreeComponent {
   }
 
   editNode() {
-    if(!this.isAdmin()){
+    if(!this.isAdmin()) {
       this.$state.go('login');
       return;
     }
@@ -68,8 +68,8 @@ export class TreeComponent {
       ancestors: this.$scope.currAncestors,
       isLeaf: false,
       isRoot: false
-    }
-    this.treeService.verifyNode(this.$scope.currId).then((valid) => {
+    };
+    this.treeService.verifyNode(this.$scope.currId).then(valid => {
       if(!valid) {
         this.$scope.message = 'The current node is missing. Please refresh and try again.';
         return;
@@ -79,12 +79,12 @@ export class TreeComponent {
           this.$scope.message = 'Node edited successfully';
         }, () => {
           this.$scope.message = 'An error occurred';
-      });
+        });
     });
     this.$scope.isEditing = false;
   }
 
-  viewEdit(){
+  viewEdit() {
     this.$scope.isEditing = true;
   }
 
