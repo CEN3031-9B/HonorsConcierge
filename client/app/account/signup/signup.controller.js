@@ -28,8 +28,8 @@ export default class SignupController {
         password: this.user.password
       })
         .then(() => {
-          // Account created, redirect to home
-          this.$state.go('main');
+          // Account created, redirect to admin panel
+          this.$state.go('admin');
         })
         .catch(err => {
           err = err.data;
