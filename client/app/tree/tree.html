@@ -33,14 +33,15 @@
 
         <div class="row">
             <div ng-repeat="child in currChildren">
-                <a href="/tree/{{child._id}}" class="waves-effect waves-light btn-large">{{child.title}}</a>
-                                       <!-- ADMIN: DELETE CHILD -->
 
-                <div class="row">
-                  <button ng-show="treeCtrl.isAdmin()" ng-click="treeCtrl.deleteNode(child._id)" class="waves-effect waves-light btn" id="childButton">Delete {{child.title}}</button>
-                </div>
+              <a ng-if="!child.isLeaf" href="/tree/{{child._id}}" class="waves-effect waves-light btn-large">{{child.title}}</a>
+              <a ng-if="child.isLeaf" ng-click="treeCtrl.showLeaf($index)" class="waves-effect waves-light btn-large orange">{{child.title}}</a>
+
+              <!-- ADMIN: DELETE CHILD -->
+              <div class="row">
+                <button ng-show="treeCtrl.isAdmin()" ng-click="treeCtrl.deleteNode(child._id)" class="waves-effect waves-light btn" id="childButton">Delete {{child.title}}</button>
+              </div>
             </div>
-
         </div>
 
     </div>
@@ -88,4 +89,16 @@
         </div>
     </div>
 
+                                        <!-- LEAF VIEWER -->
+
+    <div class="row" ng-show="treeCtrl.leafClicked">
+      <div class="col s12 m12">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">{{leafDesc}}</span>
+            <p>{{leafCont}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
