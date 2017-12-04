@@ -32,6 +32,7 @@ export class TreeComponent {
   $onInit() {
     this.treeService.getNodeById(this.$stateParams.treeId)
       .then(res => {
+        console.log(res.data);
         this.$scope.currId = res.data._id;
         this.$scope.currTitle = res.data.title;
         this.$scope.currDesc = res.data.description;
@@ -52,6 +53,20 @@ export class TreeComponent {
       }, () => {
         this.$window.location.href = '/';
       });
+    this.$scope.isEditing = true;
+  }
+
+  editNode() {
+    const newNode = {
+      title: this.$scope.currTitle,
+      description: this.$scope.currDesc,
+      content: this.$scope.currContent,
+      children: this.$scope.currChildrenIds,
+      ancestors: this.$scope.currAncestors,
+      isLeaf: this.$scope.nodeLeaf,
+      isRoot: false
+    }
+    this.treeService.updateNode(newNode, this.$scope.currId);
   }
 
   addNode() {

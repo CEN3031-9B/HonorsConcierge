@@ -27,6 +27,21 @@
                     <p><h1 id="currContent">{{currContent}}</h1></p>
                 </div>
             </div>
+
+            <div class="card" ng-show="isEditing">
+                <div class="card-content">
+                    <form class="form" name="form" ng-submit="treeCtrl.editNode()" novalidate>
+                        <div class="form-group">
+                            <input type="text" name="title" class="form-control" ng-model="currTitle" required>
+                            <input type="text" name="description" class="form-control" ng-model="currDesc" required>
+                            <input type="text" name="content" class="form-control" ng-model="currContent" required>
+                        </div>
+                        <button class="btn btn-inverse btn-lg btn-login" type="submit">
+                            Apply
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
 
                                         <!-- CHILDREN -->
