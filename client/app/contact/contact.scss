@@ -1,0 +1,105 @@
+.titleText h1{
+text-align: center;
+font-family: "Roboto";
+color: white;
+font-size: 1.5vw;
+white-space: nowrap;
+}
+
+.bg-contact{
+width: 100%;
+padding-left: 0;
+padding-right: 0;
+position: absolute;
+text-align: center;
+display: flex;
+flex-direction: column;
+height: 100%;
+background: white;
+background-image: url('https://static.pexels.com/photos/268407/pexels-photo-268407.jpeg');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+background-size: cover;
+letter-spacing: 1px;
+}
+
+.card .card-title {
+font-size: 30px;
+font-weight: 300;
+}
+
+#contactCard{
+    width:100%;
+}
+
+#dept {
+font-family: "Roboto";
+color: #084b81;
+font-size: 1.5vw;
+white-space: nowrap;
+}
+
+#sendBtn {
+text-decoration: none;
+color: #fff;
+background-color: #084b81;
+text-align: center;
+letter-spacing: .5px;
+margin: 10px;
+float: right;
+}
+
+#firstName {
+background-color: transparent;
+outline: none;
+border-radius: 0;
+border-bottom: 1px solid rgb(158, 158, 158);
+box-shadow: 0 0px 0 0 #444;
+padding-left: 0%;
+margin-left: 0px;
+width: 100%;
+}
+
+#lastName {
+background-color: transparent;
+outline: none;
+border-radius: 0;
+border-bottom: 1px solid rgb(158, 158, 158);
+box-shadow: 0 0px 0 0 #444;
+padding-left: 0%;
+margin-left: 0px;
+width: 100%;
+}
+
+/* label color */
+.input-field label {
+color: #000;
+border: none;
+left: 0rem;
+}
+
+/* label focus color */
+.input-field input:focus + label,
+{
+color: #084b81;
+}
+/* label underline focus color */
+.input-field input[type=email]:focus {
+border-bottom: 1px solid #084b81;
+box-shadow: 0 0px 0 0 #084b81;
+}
+/* valid color */
+.input-field input[type=text].valid {
+border-bottom: 1px solid #444;
+box-shadow: 0 1px 0 0 #444;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+border-bottom: 1px solid #444;
+box-shadow: 0 1px 0 0 #444;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+color: #444;
+}
