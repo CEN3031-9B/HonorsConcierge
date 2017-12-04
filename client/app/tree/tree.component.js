@@ -56,7 +56,7 @@ export class TreeComponent {
   }
 
   editNode() {
-    if(!isAdmin()){
+    if(!this.isAdmin()){
       this.$state.go('login');
       return;
     }
