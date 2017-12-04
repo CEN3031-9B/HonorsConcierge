@@ -52,7 +52,8 @@ export class TreeComponent {
       }, () => {
         this.$window.location.href = '/';
       });
-    this.$scope.isEditing = false;
+    this.$scope.isEditingNode = false;
+    this.$scope.isEditingLeaf = false;
   }
 
   editNode() {
@@ -81,11 +82,40 @@ export class TreeComponent {
           this.$scope.message = 'An error occurred';
         });
     });
-    this.$scope.isEditing = false;
+    this.$scope.isEditingNode = false;
   }
 
   viewEdit() {
-    this.$scope.isEditing = true;
+    this.$scope.isEditingNode = true;
+  }
+
+  editLeaf() {
+    if(!this.isAdmin()) {
+      this.$state.go('login');
+      return;
+    }
+    const newLeaf = {
+      title: this.$scope.leafTitle,
+      description: this.$scope.leafDesc,
+      content: this.$scope.leafContent,
+      children: [],
+      ancestors: this.$scope.leafAncestors,
+      isLeaf: true,
+      isRoot: false
+    };
+    this.treeService.verifyNode(this.$scope.leafId).then(valid => {
+      if(!valid) {
+        this.$scope.message = 'The leaf is missing. Please refresh and try again.';
+        return;
+      }
+      this.treeService.updateNode(newLeaf, this.$scope.leafId)
+        .then(() => {
+          this.$scope.message = 'Leaf edited successfully';
+        }, () => {
+          this.$scope.message = 'An error occurred';
+        });
+    });
+    this.$scope.isEditingLeaf = false;
   }
 
   addNode() {
@@ -240,8 +270,11 @@ export class TreeComponent {
   showLeaf(leafIndex) {
     this.leafClicked = true;
     const currLeaf = this.$scope.currChildren[leafIndex];
+    this.$scope.leafId = currLeaf._id;
+    this.$scope.leafTitle = currLeaf.title;
     this.$scope.leafDesc = currLeaf.description;
     this.$scope.leafCont = currLeaf.content;
+    this.$scope.leafAncestors = currLeaf.ancestors;
   }
 }
 
