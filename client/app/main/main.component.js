@@ -49,6 +49,10 @@ export class MainController {
     this.$window.location.href = `/tree/${childId}`;
   }
 
+  goToContact() {
+    this.$window.location.href = '/contact';
+  }
+
 }
 
 function findRoot(node) {
