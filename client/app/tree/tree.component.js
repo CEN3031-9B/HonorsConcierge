@@ -124,7 +124,7 @@ export class TreeComponent {
     }
     const newAncestors = angular.copy(this.$scope.currAncestors);
     newAncestors.push({
-      title: this.$scope.nodeAncestorTitle,
+      title: this.$scope.currTitle,
       id: this.$scope.currId
     });
     const newNode = {
