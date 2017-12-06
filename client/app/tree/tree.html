@@ -25,7 +25,7 @@
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">{{currDesc}}</span>
                     <p><h1 id="currContent">{{currContent}}</h1></p>
-                    <button ng-show="treeCtrl.isAdmin() && isEditingNode === false" ng-click="treeCtrl.viewEdit()" class="waves-effect waves-light btn">Edit</button>
+                    <button ng-show="treeCtrl.isAdmin() && !isEditingNode" ng-click="treeCtrl.viewEdit()" class="waves-effect waves-light btn">Edit</button>
                 </div>
             </div>
 
@@ -88,8 +88,15 @@
                                 <label for="nodeAncestorTitle">Node Ancestor</label>
                                 </div>
                                 <div class="col s6">
-                                    <input ng-show="treeCtrl.isAdmin()" id="nodeCheck" type="checkbox" ng-model="nodeLeaf">
-                                    <label for="nodeCheck">This is a leaf node</label>
+                                    Is this a node or an answer?
+                                    <p>
+                                        <input name="group1" type="radio" id="node" ng-value="false" ng-model="nodeLeaf">
+                                        <label for="node">Node</label>
+                                    </p>
+                                    <p>
+                                        <input name="group1" type="radio" id="answer" ng-value="true" ng-model="nodeLeaf">
+                                        <label for="answer">Answer</label>
+                                    </p>
                                 </div>
                                 <div class="input-field col s6">
                                     <p class="center-align"><button ng-show="treeCtrl.isAdmin()" class="btn btn-large waves-effect waves-light"  ng-click="treeCtrl.addNode()">Add Node</button></p>
