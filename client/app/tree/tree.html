@@ -1,34 +1,69 @@
 
                                         <!-- TREE TEMPLATE -->
 
-<div class="section">
+<div class="tree-section">
+    
     <div class="row">
 
-        <div class="admin-messages">
-          {{message}}
-        </div>
-
-                                        <!-- BREADCRUMBS -->
-        <div class="nav-wrapper" id="bread">
-            <div ng-repeat="ancestor in currAncestors">
-                <a href="/tree/{{ancestor.id}}" class="breadcrumb">{{ancestor.title}}</a>
-            </div>
-        </div>
-
-
-
-
                                         <!-- TREE CURRENT NODE -->
-        <h1 id="currTitle" ng-show="treeCtrl.isAdmin()"><b>{{currTitle}}</b></h1>
-        <div class="row">
-            <div class="card">
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4" style="font-weight: 100;">{{currDesc}}</span>
-                    <p><h1 id="currContent">{{currContent}}</h1></p>
-                    <button ng-show="treeCtrl.isAdmin() && isEditingNode === false" ng-click="treeCtrl.viewEdit()" class="waves-effect waves-light btn">Edit</button>
-                </div>
-            </div>
+            <div class="row">
+                
+                <div class="col s10 offset-s1">
+                    
+                    <div class="card" id="tree-card">
+                        
+                        <div class="card-content">
 
+                            <a ng-show="treeCtrl.isAdmin()" class="btn-floating btn-medium waves-effect waves-light" id="edit-btn"><i class="material-icons" ng-click="treeCtrl.viewEdit()" id="edit-node">edit</i></a>
+                                                        
+                            <div ng-repeat="ancestor in currAncestors">
+                                <a href="/tree/{{ancestor.id}}" style="font-size: 1.25em; text-transform: uppercase">{{ancestor.title}}</a>
+                                    <span style="font-size: 1.25em; text-transform: uppercase; color: white"><<</span>
+                                    <a href="/tree/{{ancestor.title}}/{{currTitle.id}}" style="font-size: 1.25em; text-transform: uppercase">{{currTitle}}</a>
+                            </div>
+        
+                                                        
+                            <p><h1 id="curr-title" ng-hide="treeCtrl.leafClicked"><b>{{currDesc}}</b></h1></p>
+
+                            
+                            <!-- CHILDREN -->
+                                
+                                <div ng-repeat="child in currChildren" ng-hide="treeCtrl.leafClicked" class="row" id="child-rows">
+                                    <a class="waves-effect waves-light btn" ng-if="!child.isLeaf" href="/tree/{{child._id}}" id="child-link">
+                                        <span id="curr-desc">{{currDesc}}</span> {{child.title}}
+                                    </a>
+                                    <a class="waves-effect waves-light btn" ng-if="child.isLeaf" ng-click="treeCtrl.showLeaf($index)" id="child-link">
+                                        <span id="curr-desc"> {{currDesc}}</span>
+                                        {{child.title}}
+                                    </a>
+                                    
+                                    <!-- ADMIN: DELETE CHILD -->
+                                    
+                                    <button ng-show="treeCtrl.isAdmin()" ng-click="treeCtrl.deleteNode(child._id)" class="waves-effect waves-light btn" id="delete-child-btn">Delete this node</button>
+                                </div>
+                                
+    
+                            
+                            <div ng-show="treeCtrl.leafClicked">
+                                <p><h1 id="leafTitle" ng-show="!isEditingLeaf">{{leafDesc}}</h1></p>
+                                <button ng-show="treeCtrl.isAdmin() && !isEditingLeaf" ng-click="isEditingLeaf = true">Edit</button>
+                                <p ng-show="!isEditingLeaf" id="leaf-content">{{leafCont}}</p>
+                                <form class="form" name="form" ng-show="isEditingLeaf" ng-submit="treeCtrl.editLeaf()" novalidate>
+                                    <div class="form-group">
+                                        <input type="text" ng-model="leafDesc" required>
+                                        <textarea name="newLeafCont" cols="30" rows="10" ng-model="leafCont" required></textarea>
+                                    </div>
+                                    <button class="btn btn-inverse btn-lg btn-login" type="submit">Apply</button>
+                                </form>
+                            </div>
+                           
+                           
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+<div class="col s10 offset-s1">
             <div class="card" ng-show="isEditingNode">
                 <div class="card-content">
                     <form class="form" name="form" ng-submit="treeCtrl.editNode()" novalidate>
@@ -43,24 +78,8 @@
                     </form>
                 </div>
             </div>
+</div>
         </div>
-
-                                        <!-- CHILDREN -->
-
-        <div class="row">
-            <div ng-repeat="child in currChildren" style="display: inline-block;">
-
-              <a ng-if="!child.isLeaf" href="/tree/{{child._id}}" class="waves-effect waves-light btn-large">{{child.title}}</a>
-              <a ng-if="child.isLeaf" ng-click="treeCtrl.showLeaf($index)" class="waves-effect waves-light btn-large orange">{{child.title}}</a>
-
-              <!-- ADMIN: DELETE CHILD -->
-              <div class="row">
-                <button ng-show="treeCtrl.isAdmin()" ng-click="treeCtrl.deleteNode(child._id)" class="waves-effect waves-light btn" id="childButton">Delete {{child.title}}</button>
-              </div>
-            </div>
-        </div>
-
-    </div>
 
                                         <!-- ADMIN: ADD NODE -->
 
@@ -107,23 +126,4 @@
 
                                         <!-- LEAF VIEWER -->
 
-    <div class="row" ng-show="treeCtrl.leafClicked"> <div class="col s12 m12">
-        <div class="card">
-          <div class="card-content">
-            <span class="card-title" ng-show="!isEditingLeaf">{{leafDesc}}</span>
-            <button ng-show="treeCtrl.isAdmin() && !isEditingLeaf" ng-click="isEditingLeaf = true">Edit</button>
-            <p ng-show="!isEditingLeaf">{{leafCont}}</p>
-            <form class="form" name="form" ng-show="isEditingLeaf" ng-submit="treeCtrl.editLeaf()" novalidate>
-              <div class="form-group">
-                <input type="text" ng-model="leafDesc" required>
-                <textarea name="newLeafCont" cols="30" rows="10" ng-model="leafCont" required></textarea>
-              </div>
-              <button class="btn btn-inverse btn-lg btn-login" type="submit">
-                Apply
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
+
