@@ -1,93 +1,23 @@
 .card-title {
-white-space: nowrap;
+  white-space: nowrap;
 }
 
 .delete-node {
-text-decoration: none;
-color: #fff;
-background-color: #084b81;
-width: 200px;
-text-align: center;
-letter-spacing: .5px;
-}
-
-
-#child-link {
-  background-color: #4682B4;
+  text-decoration: none;
   color: #fff;
-  font-size: 1.25em;
-
-}
-
-#curr-desc {
-   color: #C0C0C0;
-}
-
-
-#edit-btn {
-  background-color: #db662c;
-  position: absolute;
-  right: 15px;
-  top: 15px;
-}
-
-
-
-#currContent {
-text-align: center;
-font-family: "Roboto";
-color: black;
-font-size: 1.25vw;
-white-space: nowrap;
-}
-
-#curr-title {
+  background-color: #084b81;
+  width: 200px;
   text-align: center;
-  font-family: "Roboto";
-  color: #fff;
-  font-size: 3em;
-  white-space: nowrap;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  letter-spacing: .5px;
 }
 
-#leafTitle {
-text-align: center;
-font-family: "Roboto";
-color: #DCDCDC;
-font-size: 3em;
-text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-}
-
-#leaf-content {
-text-align: center;
-font-family: "Roboto";
-color: #DCDCDC;
-font-size: 1.25em;
-}
-
-
-
-
-#currDesc {
-  text-align: center;
-  font-family: "Roboto";
-  color: #084b81;
-  font-size: 2.5vw;
-  white-space: nowrap;
-text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-#edit-node {
-  font-size: 30px;
-  color: #084b81;
-}
 
 .tree-section {
   width: 100%;
   height: 100%;
   padding-left: 0;
   padding-right: 0;
-top: 0px;
+  top: 0px;
   position: absolute;
   flex-direction: column;
   background: transparent;
@@ -99,49 +29,59 @@ top: 0px;
   letter-spacing: 1px;
 }
 
+#add-btn {
+  background-color: #db662c;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+
+#child-link {
+  background-color: #4682B4;
+  color: #fff;
+  font-size: 1.25em;
+}
+
 #child-rows{
-padding-top: 0.5%;
+  padding-top: 0.5%;
 }
 
 #child-rows-clicked{
-padding: 0 0;
+  padding: 0 0;
 }
 
-@keyframes fadeOutDown {
-  0% {
-    opacity: 1;
-    transform: none;
-  }
-
-  100% {
-    opacity: 0;
-    transform: translate3d(0, 100%, 0);
-  }
+#currContent {
+  text-align: center;
+  font-family: "Roboto";
+  color: black;
+  font-size: 1.25vw;
+  white-space: nowrap;
 }
 
-#sure {
-padding-top: 1%;
-padding-bottom: 1%;
-  text-decoration: none;
+#curr-desc {
+  color: #C0C0C0;
+}
+
+#curr-title {
+  text-align: center;
+  font-family: "Roboto";
   color: #fff;
-  background-color: #084b81;
-height: 100%;
-max-width: 300 px;
-  text-align: left;
-line-height: 20px;
+  font-size: 3em;
+  white-space: nowrap;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-.orange {
+#delete-child-btn {
+  background-color: #696969;
+}
+
+#edit-btn {
   background-color: #db662c;
+  position: absolute;
+  right: 65px;
+  top: 15px;
 }
-
-#tree-card {
-  background-color: #084b81;
-  border-radius: 10px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  transition: transform 300ms ease-in-out;
-}
-
 
 #edit-leaf-cont{
   font-size: 1.25em;
@@ -151,14 +91,15 @@ line-height: 20px;
   min-height: 100px;
 }
 
-#delete-child-btn {
-  background-color: #696969;
+#edit-node {
+  font-size: 30px;
+  color: #084b81;
 }
 
 #labels-add-node {
   margin-top: 10px;
   margin-bottom: 10px;
-  width: 100%;
+  width: 90%;
   background-color: #fff;
   font-family: 'Roboto';
   font-size: 1em;
@@ -169,14 +110,36 @@ line-height: 20px;
   border-radius: 10px;
   outline: none;
   text-align: center;
-  padding-left: 2%;
+  padding: 0;
+  border-width: 0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   animation-fill-mode: forwards;
 }
 
 #leaf {
-background: #fff;
-border-radius: 10px;
-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-transition: transform 300ms ease-in-out;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition: transform 300ms ease-in-out;
+}
+
+#leaf-content {
+  text-align: center;
+  font-family: "Roboto";
+  color: #DCDCDC;
+  font-size: 1.25em;
+}
+
+#leafTitle {
+  text-align: center;
+  font-family: "Roboto";
+  color: #DCDCDC;
+  font-size: 3em;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+#tree-card {
+  background-color: #084b81;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
