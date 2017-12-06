@@ -17,7 +17,7 @@
                              
                             
                             <div ng-repeat="ancestor in currAncestors">
-                                <a href="/tree/{{ancestor.id}}" style="font-size: 1.25em; text-transform: uppercase">{{ancestor.title}}</a>
+                               <span id="crumb-nav"> >> </span> <a href="/tree/{{ancestor.id}}" style="font-size: 1.25em; text-transform: uppercase">{{ancestor.title}}</a>
                             </div>
         
                                                         
