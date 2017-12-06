@@ -7,12 +7,12 @@
         <!-- <div class="search-wrapper">
         <li class="search"><input id="search" placeholder="search"></li>
         </div> -->
-          <li><a class="dropdown-button" ng-show="$ctrl.isLoggedIn()" ui-sref="logout">Logout</a></li>
-          <li><a class="dropdown-button" ng-show="$ctrl.isAdmin()" ui-sref="admin">Admin</a></li>
           <li><a class="dropdown-button" data-beloworigin='true' data-hover="true" href="/tree/5a1f35ba5a3b5953452571ea">Honors Program</a></li>
           <li><a class="dropdown-button" data-beloworigin='true' data-hover="true" href="/tree/5a1f35c95a3b5953452571ec">Registration</a></li>
           <li><a class="dropdown-button" data-beloworigin='true' data-hover="true" href="/tree/5a1f3d897950c72a5c099b9a">Degree Planning</a></li>
           <li><a class="dropdown-button" data-beloworigin='false' data-hover="false" href="/contact" data-activates="dropdown4">Contact</a></li>
+          <li><a class="dropdown-button" ng-show="$ctrl.isAdmin()" ui-sref="admin">Admin</a></li>
+          <li><a class="dropdown-button" ng-show="$ctrl.isLoggedIn()" ui-sref="logout">Logout</a></li>
       </div>
     </nav>
   </div>
