@@ -90,41 +90,47 @@
                         <form id="add-container">
                             <div class="row">
                                     <div class="input-field col s5 offset-s1">
-                                    <input ng-show="treeCtrl.isAdmin()" id="labels-add-node" type="text" ng-model="nodeTitle" placeholder="Branch: Honors, Registration, Degree">
-                                    <label for="nodeTitle">Branch</label>
+                                    <input  id="labels-add-node" type="text" ng-model="nodeTitle" placeholder="Branch: Honors, Registration, Degree">
+                                    <label for="nodeTitle" id="add-label-format">Branch</label>
                                 </div>
                                 <div class="input-field col s5 offset-s1">
-                                    <input ng-show="treeCtrl.isAdmin()" id="labels-add-node" type="text" ng-model="nodeDesc" placeholder="Description Text">
-                                    <label for="nodeDesc">Description</label>
+                                    <input  id="labels-add-node" type="text" ng-model="nodeDesc" placeholder="Description text">
+                                    <label for="nodeDesc" id="add-label-format">Description</label>
                                 </div>
                                 <div class="input-field col s5 offset-s1">
-                                    <textarea ng-show="treeCtrl.isAdmin()" id="labels-add-node" ng-model="nodeContent" placeholder="Content">
+                                    <textarea  id="text-add-node" ng-model="nodeContent" placeholder="This content is only required if creating a leaf node">
                                     </textarea>
-                                    <label for="nodeContent">Content</label>
+                                    <label for="nodeContent" id="add-label-format">Content</label>
                                 </div>
                                 <div class="input-field col s5 offset-s1">
-                                <input ng-show="treeCtrl.isAdmin()" type="text" id="labels-add-node" ng-model="nodeAncestorTitle" placeholder="Node ancestor">
-                                <label for="nodeAncestorTitle">Node Ancestor</label>
+                                <input  type="text" id="labels-add-node" ng-model="nodeAncestorTitle" placeholder="Node ancestor">
+                                <label for="nodeAncestorTitle" id="add-label-format">Node Ancestor</label>
                                 </div>
-                                <div class="input-field col s5 offset-s1">
-                                    <input ng-show="treeCtrl.isAdmin()" id="nodeCheck" type="checkbox" ng-model="nodeLeaf">
-                                    <label for="nodeCheck">This is a leaf node</label>
+                                <div class="col s5 offset-s1">
+                                    <input id="nodeCheck" type="checkbox" ng-model="nodeLeaf">
+                                    <label for="nodeCheck" id="node-check">This is a leaf node</label>
                                 </div>
-                                <div class="input-field col s5 offset-s1">
-                                    <p class="right-align">
-                                     <button ng-show="treeCtrl.isAdmin()" class="btn btn-inverse btn-lg btn-login green"  ng-click="treeCtrl.addNode()">
+                                <div class="input-field col s5 offset-s1" id="add-div-btn">
+                                    
+                                     <button class="btn btn-inverse btn-lg btn-login green"  ng-click="treeCtrl.addNode()">
                                          Add Node
                                      </button>
                                      <button class="btn btn-inverse btn-lg btn-login red" ng-click="isAddingNode = false">
                                          Cancel
                                      </button>
-                                     </p>
+                              
+                                </div>
+                                <div class="admin-messages">
+                                    {{message}}
                                 </div>
                             </div>
                         </form>
+                        
                     </div>
                 </div>
             </div>
+        
+        
         </div>
     </div>
 </div>
