@@ -87,6 +87,7 @@ text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   height: 100%;
   padding-left: 0;
   padding-right: 0;
+top: 0px;
   position: absolute;
   flex-direction: column;
   background: transparent;
@@ -143,11 +144,11 @@ line-height: 20px;
 
 
 #edit-leaf-cont{
-font-size: 1em;
-background-color: #fff;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-border-radius: 10px;
-min-height: 100px;
+  font-size: 1.25em;
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  min-height: 100px;
 }
 
 #delete-child-btn {
@@ -155,25 +156,25 @@ min-height: 100px;
 }
 
 #labels-add-node {
-margin-top: 10px;
-margin-bottom: 10px;
-width: 100%;
-background-color: #fff;
-font-family: 'Roboto';
-font-size: 1em;
-font-weight: 200;
-letter-spacing: 1px;
-border-bottom: none;
-display: block;
-border-radius: 10px;
-outline: none;
-text-align: center;
-padding-left: 2%;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-animation-fill-mode: forwards;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  background-color: #fff;
+  font-family: 'Roboto';
+  font-size: 1em;
+  font-weight: 200;
+  letter-spacing: 1px;
+  border-bottom: none;
+  display: block;
+  border-radius: 10px;
+  outline: none;
+  text-align: center;
+  padding-left: 2%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-fill-mode: forwards;
 }
 
-#leaf{
+#leaf {
 background: #fff;
 border-radius: 10px;
 box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
