@@ -54,6 +54,7 @@ export class TreeComponent {
       });
     this.$scope.isEditingNode = false;
     this.$scope.isEditingLeaf = false;
+    this.$scope.isAddingNode = false;
   }
 
   editNode() {
